@@ -1,0 +1,6 @@
+Django
+django-cors-headers
+djangorestframework
+matplotlib
+psycopg2-binary
+svglib
