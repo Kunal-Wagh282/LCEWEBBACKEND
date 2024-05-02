@@ -36,7 +36,6 @@ MEDIA_URLS ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Application definition
@@ -149,12 +148,18 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Default primary key field typ
+# Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+CORS_ALLOWED_ORIGINS = [
+      "http://127.0.0.1:5173",
+      "http://localhost:5173",
+      "http://172.16.32.241:5173",
+      "http://192.168.105.201:5173",
+      "http://49.36.32.159:5173"
+  ]
 
 DATE_INPUT_FORMATS = ['%Y-%m-%d', ]
 
