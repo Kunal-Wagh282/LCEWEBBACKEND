@@ -20,6 +20,7 @@ media/
 
 # Static files
 staticfiles/
+static/
 
 # Log files
 *.log
