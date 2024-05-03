@@ -204,7 +204,7 @@ class GenerateAnalysis(APIView):
                         average_time_array.append(round(val/count,2))
                     else:
                         average_time_array.append(0)
-                return Response({"u_id":u_id,"p_name":p_name,"average_time_array":average_time_array,"date_array":date_array},status=status.HTTP_200_OK)
+                return Response([{"u_id":u_id,"p_name":p_name,"average_time_array":average_time_array,"date_array":date_array}],status=status.HTTP_200_OK)
             return Response({'message':f'No data found between {from_date} and {to_date} '}, status=status.HTTP_204_NO_CONTENT)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
             
