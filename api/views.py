@@ -174,23 +174,7 @@ class GarphDataSend(APIView):
             return Response({'message':f'no data on date {date}'}, status=status.HTTP_204_NO_CONTENT)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-# class GenerateReport(APIView):
-#     serializer_class = ReportGeneratorRequestSerializer
-#     def post(self, request, fromat = None):
-#         serializer = self.serializer_class(data = request.data)
-#         if serializer.is_valid():
-#             u_id = serializer.data.get('u_id')
-#             p_name = serializer.data.get('p_name')
-#             from_date = serializer.data.get('from_date')
-#             to_date = serializer.data.get('to_date')
-#             queryset = GraphDatabase.objects.filter(date__range=(from_date, to_date), u_id=u_id, p_name=p_name)
-#             if queryset.exists():
-#                 response  = generate_report(queryset.values())
-                
-#                 return response
-#             return Response({'message':f'No data found between {from_date} and {to_date} '}, status=status.HTTP_204_NO_CONTENT)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 class GenerateAnalysis(APIView):
     serializer_class = GenerateAnalysisSerializer
     def post(self, request, fromat = None):
