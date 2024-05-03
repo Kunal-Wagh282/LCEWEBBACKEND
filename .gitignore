@@ -18,6 +18,8 @@ local_settings.py
 # Media files
 media/
 
+api/ReportGenrator
+
 # Static files
 staticfiles/
 static/

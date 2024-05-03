@@ -44,11 +44,11 @@ class GraphDataSendSerializer(serializers.ModelSerializer):
         fields =['u_id','p_name','time_array','volume_array','date','total_volume']
 
     
-class ReportGeneratorRequestSerializer(serializers.Serializer):
-    u_id = serializers.IntegerField()
-    p_name = serializers.CharField(max_length=50)
-    from_date = serializers.DateField()
-    to_date = serializers.DateField()
+# class ReportGeneratorRequestSerializer(serializers.Serializer):
+#     u_id = serializers.IntegerField()
+#     p_name = serializers.CharField(max_length=50)
+#     from_date = serializers.DateField()
+#     to_date = serializers.DateField()
 
 class GenerateAnalysisSerializer(serializers.Serializer):
     u_id = serializers.IntegerField()
