@@ -12,7 +12,19 @@ from datetime import datetime
 import numpy as np
 import json
 
+from datetime import datetime, timedelta
 
+def generate_dates(start_date_str, end_date_str):
+    start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+    end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+    
+    dates = []
+    current_date = start_date
+    while current_date <= end_date:
+        dates.append(current_date.strftime("%Y-%m-%d"))
+        current_date += timedelta(days=1)
+    
+    return dates
 
 # Create your views here.
 
@@ -186,10 +198,10 @@ class GenerateAnalysis(APIView):
             to_date = serializer.data.get('to_date')
             queryset = GraphDatabase.objects.filter(date__range=(from_date, to_date), u_id=u_id, p_name=p_name)
             if queryset.exists():
+                all_dates_array = generate_dates(from_date,to_date)
                 average_time_array = []
                 date_array = []
-                for dates in queryset:
-                    date = dates.date
+                for date in all_dates_array:
                     if date in date_array :
                         continue
                     date_array.append(date)
