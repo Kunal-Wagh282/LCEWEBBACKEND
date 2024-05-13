@@ -89,14 +89,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'mylungbd-4719.7s5.aws-ap-south-1.cockroachlabs.cloud',
-        'USER': 'pmlj',
-        'PASSWORD': 'LjcqbFxuhRY5M0JY2KpiUw',
-        'NAME': 'defaultdb',
-        'PORT': '26257',
-        'OPTIONS': {
-            'sslmode': 'verify-full',
-        }
+        'HOST': 'mylungdb.czyo0aceeyfl.us-east-1.rds.amazonaws.com',
+        'USER': 'postgres',
+        'PASSWORD': '12345678',
+        'NAME': 'mylungdb',
+        'PORT': '5432'
     }
 }
 
