@@ -102,15 +102,30 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 #     )
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'HOST': '34.47.141.56',
+#         'USER': 'lce',
+#         'PASSWORD': 'lceadmin',
+#         'NAME': 'LungData',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '34.47.141.56',
-        'USER': 'lce',
-        'PASSWORD': 'lceadmin',
-        'NAME': 'LungData',
+        'HOST': 'mylungbd-4719.7s5.aws-ap-south-1.cockroachlabs.cloud',
+        'USER': 'pmlj',
+        'PASSWORD': 'LjcqbFxuhRY5M0JY2KpiUw',
+        'NAME': 'defaultdb',
+        'PORT': '26257',
+        'OPTIONS': {
+            'sslmode': 'verify-full',
+        }
     }
 }
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
